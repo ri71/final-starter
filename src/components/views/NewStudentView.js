@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 
-const useStyles = makeStyles( () => ({
+const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
@@ -16,10 +16,10 @@ const useStyles = makeStyles( () => ({
     fontType: 'bold',
     fontFamily: 'Courier, sans-serif', 
     fontSize: '35px', 
-    color: '#CDDC39'
+    color: 'black'
   },
   appBar:{
-    backgroundColor: '#11153e',
+    backgroundColor: '#b2a6ff',
     shadows: ['none'],
   },
   greeting:{
@@ -32,7 +32,7 @@ const useStyles = makeStyles( () => ({
   links:{
     textDecoration: 'none',
   }
-  
+
 }));
 
 const NewStudentView = (props) => {
