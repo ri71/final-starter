@@ -1,8 +1,14 @@
 .App {
-  background-color: #fcb6bb;
+  background-color: #bed4fa;
   min-height: 100vh;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.campusimage{
+  height: 650px;
+  width: 1450px;
+  margin-top: 50px;
 }
