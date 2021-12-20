@@ -30,6 +30,18 @@ export const fetchCampusThunk = (id) => async (dispatch) => {
   }
 };
 
+export const addCampusThunk = (campus) => async (dispatch) => {
+  try {
+    let res = await axios.post(`/api/campuses`, campus);
+    dispatch(ac.addCampus(res.data));
+    return res.data;
+  } catch(err) {
+    console.error(err);
+  }
+};
+
+//delete campus
+
 export const deleteCampusThunk = CampusId => async dispatch => {
   try {
     await axios.delete(`/api/campuses/${CampusId}`);
