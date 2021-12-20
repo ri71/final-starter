@@ -6,6 +6,7 @@ const AllCampusesView = (props) => {
     return <div>There are no campuses.</div>;
   }
 
+  
   return (
     <div>
       {props.allCampuses.map((campus) => (
