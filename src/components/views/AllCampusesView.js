@@ -39,25 +39,61 @@ const useStyles = makeStyles(theme => ({
 const AllCampusesView = (props) => {
   const classes = useStyles();
   if (!props.allCampuses.length) {
-    <AppBar position="static" elevation={0} className={classes.appBar}>
-  <Toolbar>Hello</Toolbar>
-  </AppBar>
 
-    return (
-      <div>
-        <AppBar>
-          <Toolbar>
-            Hello
-          </Toolbar>
-        </AppBar>
-      </div>
-    )
+  <div>
+      <AppBar position="static" elevation={0} className={classes.appBar}>
+        <Toolbar>
+          <Link className={classes.title} to={'/'}>
+            <Typography variant="h6" className={classes.title} color="inherit" >
+                Campus App
+            </Typography>
+          </Link>
+          
+          <Link className={classes.links} to={'/campuses'} >
+            <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
+              All Campuses
+            </Button>
+          </Link>
+
+          <Link className={classes.links} to={'/students'} >
+            <Button variant="contained" color="primary">
+              All Students
+            </Button>
+          </Link>
+        </Toolbar>
+      </AppBar>
+      <p>There are no campuses.</p>
+      <Link to={`newstudent`}>
+        <button>Add New Student</button>
+      </Link>
+    </div>
   }
   
   return (
     <div>
-            <AppBar position="static" elevation={0} className={classes.appBar}>
+            {/* <AppBar position="static" elevation={0} className={classes.appBar}>
             <Toolbar>Hello</Toolbar>
+      </AppBar> */}
+      <AppBar position="static" elevation={0} className={classes.appBar}>
+        <Toolbar>
+          <Link className={classes.title} to={'/'}>
+            <Typography variant="h6" className={classes.title} color="inherit" >
+                Campus App
+            </Typography>
+          </Link>
+          
+          <Link className={classes.links} to={'/campuses'} >
+            <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
+              All Campuses
+            </Button>
+          </Link>
+
+          <Link className={classes.links} to={'/students'} >
+            <Button variant="contained" color="primary">
+              All Students
+            </Button>
+          </Link>
+        </Toolbar>
       </AppBar>
       {props.allCampuses.map((campus) => (
         <div key={campus.id}>
@@ -65,8 +101,14 @@ const AllCampusesView = (props) => {
             <h1>{campus.name}</h1>
           </Link>
           <p>{campus.description}</p>
+         
+        
         </div>
       ))}
+      
+        <Link to={`/newcampus`}>
+        <button>Add New Campus</button>
+      </Link>
     </div>
   );
 };
